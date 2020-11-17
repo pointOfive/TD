@@ -27,7 +27,7 @@ As a representative example of the teaching style and approach I use for this cl
 
 ![plotly](images/imageedit_1_8302619965.gif)
 
-The code presentation used for this lecture can be viewed [here](http://htmlpreview.github.io/?https://github.com/pointOfive/TD/blob/master/Mod_12_Live.html); however, the interactive plotly figures do not render with this page viewer.  [Downloading](Mod_12_Live.html) and opening the html file directly on your local machine should allow you to view and interact with the plotly figures; or, if you are a savvy RStudio user, you may download and run the [code](Mod_12_Live.Rmd) directly.  
+The code presentation used for this lecture can be viewed [here](https://pointofive.github.io/Mod_12_Live.html).  You can also [Downloading](Mod_12_Live.html) and open the html file directly on your local computer; or, if you are a savvy RStudio user, you may download and run the [code](Mod_12_Live.Rmd) directly.  
 
 ![plotly](images/plotly.png)
 
