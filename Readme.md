@@ -1,5 +1,5 @@
 
-# Scott L. Schwartz, Ph.D
+# Scott L. Schwartz, Ph.D. 
 ## Teaching Dossier
 
 - [Data Mining](#data-mining)

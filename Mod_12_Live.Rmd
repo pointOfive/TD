@@ -2,8 +2,32 @@
 title: "Mod_12_Live"
 author: "Schwartz"
 date: "11/16/2020"
-output: html_document
+output:
+     html_document:
+          toc: TRUE
+          toc_depth: 4
+          toc_float: true
+          toc_collapsed: true
+          theme: journal
+          code_folding: hide
 ---
+
+<!--- Change font size for headers --->
+<style>
+h1.title {
+  font-size: 28px;
+}
+h1 {
+  font-size: 22px;
+}
+h2 {
+  font-size: 18px;
+}
+h3 { 
+  font-size: 14px;
+}
+
+</style>
 
 
 ## Announcements
@@ -11,7 +35,7 @@ output: html_document
 - None
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE,
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE, 
                       fig.align = "center",
                       out.width = "80%")
 ```
@@ -58,7 +82,7 @@ data_space_plot <- tibble(x=x,y=y) %>%
 data_space_plot + ggtitle('"Data Space"')
 ```
 
-```{r model}
+```{r model, include=FALSE}
 X <- tibble(intercept=1,x=x)
 X
 
@@ -70,9 +94,9 @@ tibble( yhat = as.matrix(X) %*% as.matrix(Beta) )
 
 ## Gradient Descent 
 
-- We *can* solve for the gradient equal to 0, but instead...
-- Let's see how we would *numerically* fit this model...
-- With **Gradient Descent**!
+- We *can* solve for the gradient equal to $0$, but instead...
+- let's see how we would *numerically* fit this model...
+- with **Gradient Descent**!
 
 $$\LARGE
 \begin{align*}
@@ -85,12 +109,12 @@ $$\LARGE
 
 - PollEv.com/scottschwart658
 - What is $\sum_{i=1}^n (y_i - \hat y_i)^2 = (\mathbf{y}-\mathbf{X} {\boldsymbol \beta})^T(\mathbf{y}-\mathbf{X} {\boldsymbol \beta})$?
-- What is $\nabla_{\mathbf{\boldsymbol \beta}}$
+- What is $\nabla_{\mathbf{\boldsymbol \beta}}$?
 - What is $\nabla_{\mathbf{\boldsymbol \beta}} \frac{1}{2} \left(  \mathbf{y}^T\mathbf{y}-2{\boldsymbol \beta}^T \mathbf{X}^T\mathbf{y}+ {\boldsymbol \beta}^T \mathbf{X}^T \mathbf{X} {\boldsymbol \beta}\right) = \mathbf{X}^T \left(\mathbf{X} {\boldsymbol \beta} - \mathbf{y}\right)$?
 
 ## Gradient Descent in "Parameter" Space
 
-### initiallize gradient descent algorithm
+- initiallize gradient descent algorithm
 
 ```{r model_gradient_decent_setup}
 
@@ -103,9 +127,8 @@ Betas_pars <- Beta %>% rename_at(step,
 loss_pars <- c(sum((as.matrix(X)%*%as.matrix(Beta)-as.matrix(y))^2))
 ```
 
-### take some gradient descent steps
-
-- this is repeatedly manually run (10 times)
+- take some gradient descent steps
+  - this is repeatedly manually run (10 times)
 
 ```{r model_gradient_descent_iteration, include=FALSE}
 
@@ -138,11 +161,12 @@ Betas_pars %>% add_column(Beta) %>%
 
 # https://tibble.tidyverse.org/reference/add_row.html
 Betas_pars %>% add_row() -> tmp
-tmp[3,]<-loss_pars
-tmp
+tmp[3,] < -loss_pars
+tmp %>% knitr::kable(digits=2) %>%
+  kableExtra::kable_styling(full_width=FALSE)
 ```
 
-### create a cost function visualization
+- create a cost function visualization
 
 ```{r cost_function}
 # https://stackoverflow.com/questions/42158198/r-equivalent-of-pythons-np-dot-for-3d-array
@@ -274,7 +298,7 @@ $$\LARGE
 
 ## Gradient Descent in "Prediction" Space
 
-### initiallize gradient descent algorithm
+- initiallize gradient descent algorithm
 
 ```{r prediction_gradient_decent_setup}
 alpha_learning_rate <- 0.5
@@ -284,9 +308,8 @@ Betas = Beta %>% rename_at(step,
 loss_pars <- c(sum((as.matrix(X)%*%as.matrix(Beta)-as.matrix(y))^2))
 ```
 
-### take some gradient descent steps
-
-- this is repeatedly manually run (10 times)
+- take some gradient descent steps
+  - this is repeatedly manually run (10 times)
 
 
 ```{r prediction_gradient_decent_iteration, include=FALSE}
@@ -324,7 +347,8 @@ loss_pars <- append(loss_pars,
 
 Betas %>% add_row() -> tmp
 tmp[3,]<-loss_pars
-tmp
+tmp %>% knitr::kable(digits=2) %>%
+  kableExtra::kable_styling(full_width=FALSE)
 
 ```
 
