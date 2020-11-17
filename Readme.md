@@ -18,7 +18,7 @@
   - material is largely asynchronous
   - with one one-hour lecture given per week
 
-My "live session" lectures for this class alternatingly combine (a) interactive plotting demonstrations of the methodologies usually using shiny or plotly with (b) PollEverwhere promts to reinforce and clarify the ley lessons of the visualizations.  My lecturing style welcomes interactivity and questioning from students.
+My "live session" lectures for this class alternatingly combine (a) interactive plotting demonstrations of the methodologies usually using shiny or plotly with (b) PollEverwhere promts to reinforce and clarify the key lessons of the visualizations.  My lecturing style welcomes interactivity and questioning from students.
 
 ## Data Mining Example Lecture: Gradient Boosting
 
