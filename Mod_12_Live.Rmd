@@ -30,9 +30,14 @@ h3 {
 </style>
 
 
-## Announcements
+## Opening Notes/Comments/Announcements
 
-- None
+- Long Run Times for SVMs... subsample!!
+- Project Part 2 deadline?
+- ROC v Precision/Recall bonus
+- Data Usage: D,H
+- Lecture Motivation
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE, 
