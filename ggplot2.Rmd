@@ -1,0 +1,311 @@
+---
+title: "ggplot2_1"
+author: "Schwartz"
+date: "9/19/2020"
+output:
+     html_document:
+          toc: TRUE
+          toc_depth: 4
+          toc_float: true
+          toc_collapsed: true
+          theme: journal
+          code_folding: hide
+---
+
+<!--- Change font size for headers --->
+<style>
+h1.title {
+  font-size: 28px;
+}
+h1 {
+  font-size: 22px;
+}
+h2 {
+  font-size: 18px;
+}
+h3 { 
+  font-size: 14px;
+}
+
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE, 
+                      fig.align = "center",
+                      out.width = "80%")
+```
+
+
+
+# HW [Group Assignment]
+
+*Each group member must uniquely complete this assignment for the group to get 
+credit for this homework. If only some members of the group complete the 
+assignment, they must each submit a supplemental explanation along with their 
+submission as to why the other students in their group have not completed this 
+assignment.*
+
+0. Review the the 
+   [ggplot2 documentation](https://r4ds.had.co.nz/data-visualisation.html)
+   and related resources to your own satisfaction and as needed to create the 
+   exercise
+1. Find a data set you're interested in that lends itself to this assignment
+    - As noted in `Pirates_Snakes.Rmd` and `Pirates_Snakes.ipynb` (from Class 5) 
+      and in the code below (Class 6) some ways to find data are
+      - data analysis websites such as [kaggle](https://www.kaggle.com/) data 
+        repositories such as those provided by 
+        [seaborn](https://github.com/mwaskom/seaborn-data) and
+        [CMU](http://lib.stat.cmu.edu/datasets/) 
+        (e.g., we've used the [penguins](https://raw.githubusercontent.com/mwaskom/seaborn-data/master/penguins.csv), 
+         [strikes](http://lib.stat.cmu.edu/datasets/strikes), and
+         [S&P](http://lib.stat.cmu.edu/datasets/spdc2693)) data sets)
+      - other similar resources, such as (in no particular order)
+        - [Data Portals](http://dataportals.org/)
+        - [UCIML Repo](http://archive.ics.uci.edu/ml/)
+        - [OpenDataMonitor](http://opendatamonitor.eu/)
+        - [Quandl](http://quandl.com/)
+        - [Wikipedia](https://en.wikipedia.org/wiki/List_of_datasets_for_machine-learning_research)
+        - [AWS data set](https://registry.opendata.aws/)
+        - [Quora.com](https://www.quora.com/Where-can-I-find-large-datasets-open-to-the-public)
+        - [The datasets subreddit](https://www.reddit.com/r/datasets)
+        - [TFDS](https://www.tensorflow.org/datasets/catalog/overview)
+        
+    - `data()` will show you data sets available in R
+      - And you can load data as done in  `Pirates_Snakes.Rmd` (Class 6), 
+        e.g., `data("USArrests")`
+        - **HOWEVER**, if you use a built in data set, the maximum grade you can 
+          get on this assignment is 90%, with the following exception:
+          - 10% of the assignment is for "reading in" data from a `.csv` or other 
+          tabular "non built-in" data source
+          - ...so you you cat get full 100% by first saving an internal data set 
+          to a `.csv` or other tabular data format and THEN reading it into R 
+          (to get credit for the last 10%
+    
+2. Create an attractive graphical image presenting information in the data
+3. Use both the `size` and `color` attributes in your graphic
+    - These aesthetics are demonstrated in the "`hwy` versus `displ`" plots 
+      [here](https://r4ds.had.co.nz/data-visualisation.html#aesthetic-mappings):
+      - `ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy, color = class))`
+           # (colored by `class`)
+      - `ggplot(data = mpg) +  geom_point(mapping = aes(x = displ, y = hwy, size = class))`    
+           # (sized by `class`)
+
+4. Use the `facets` feature of ggplot2
+    - This aesthetic is demonstrated 
+      [here](https://r4ds.had.co.nz/data-visualisation.html#facets)
+5. For +10 points, use a "color blind friendly" color palette.
+    - One example of how to do this with `scale_colour_manual(values=cbbPalette)` and
+      `cbbPalette <- c("#009E73", "#CC79A7","#D55E00", "#000000","#56B4E9", "#F0E442", "#0072B2", "#E69F00")`
+      is described [here](http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#a-colorblind-friendly-palette)
+
+Hint: you'll need 3 factor variables and two continuous variables to do this, though continuous variables can be discretized to produce factor level variables.
+
+
+# ggplot2 (R)
+
+- Perhaps the best (most principled) plotting library around
+- Here are the references/resources I've used to create the code in this file
+
+## Canonical Resources:
+- [R4DS -- Data Visualization](https://r4ds.had.co.nz/data-visualisation.html)
+- [tiidyverse -- learning ggplot2](https://ggplot2.tidyverse.org/#learning-ggplot2)
+- [R4DS -- Graphics for Communication](https://r4ds.had.co.nz/graphics-for-communication.html)
+  - [R4DS -- scales](https://r4ds.had.co.nz/graphics-for-communication.html#scales)
+    - [R4DS -- rescaling](https://r4ds.had.co.nz/graphics-for-communication.html#replacing-a-scale)
+- [R Cookbook](http://www.cookbook-r.com/Graphs/)
+- [tidyverse -- ggplot2](https://ggplot2.tidyverse.org)
+
+## Manual Pages
+- [tidyverse readr](https://readr.tidyverse.org/reference/read_delim.html)
+- [tidyverse str_replace](https://stringr.tidyverse.org/reference/str_replace.html)
+- [tidyverse join](https://dplyr.tidyverse.org/reference/join.html)
+- [tidyverse scale_viridis](https://ggplot2.tidyverse.org/reference/scale_viridis.html)
+
+## Additional Resources
+- [Proportional Ink](https://stackoverflow.com/questions/7714677/scatterplot-with-too-many-points)
+- [Rotatinig Labels](https://community.rstudio.com/t/x-axis-labels-overlap-want-to-rotate-labels-45/63800)
+- [Customizinig Ticks](http://www.sthda.com/english/wiki/ggplot2-axis-ticks-a-guide-to-customize-tick-marks-and-labels)
+
+## Data Sets
+- [Kaggle 2016 Primaries](https://www.kaggle.com/benhamner/2016-us-election?select=primary_results.csv)
+- [Kaggle County Facts](https://www.kaggle.com/benhamner/2016-us-election?select=county_facts.csv)
+
+# Code
+
+## Initialization
+
+- loading tidyverse, data, and joining tables
+
+```{r data}
+library(tidyverse)
+
+# https://readr.tidyverse.org/reference/read_delim.html
+d1 <- "/Users/gck8gd/Documents/courses/SDS_3003_Communication_w_Data/primary_results.csv"
+primary_results <- readr::read_csv(d1)
+d2 <- "/Users/gck8gd/Documents/courses/SDS_3003_Communication_w_Data/county_facts.csv"
+county_facts <- readr::read_csv(d2)
+
+# https://stringr.tidyverse.org/reference/str_replace.html
+# https://dplyr.tidyverse.org/reference/join.html
+county_facts %>% dplyr::mutate(county=stringr::str_replace(area_name, 
+                                                          ' County', '')) %>%
+  dplyr::inner_join(primary_results, by=c('state_abbreviation','county')) ->
+  county_factsANDprimaries
+```
+
+## Elements of a ggplot
+
+### `ggplot` function
+
+```{r components_1}
+my_first_ggplot <- ggplot(data=county_factsANDprimaries)
+
+my_first_ggplot
+```
+
+### `ggplot` parts
+
+```{r components_2a}
+ls(my_first_ggplot)
+```
+
+### `ggplot` data 
+
+```{r components_2b}
+my_first_ggplot[['data']]
+```
+
+### `aes` aesthetic mappings
+
+```{r components_2c}
+my_first_ggplot[['mapping']]
+```
+
+```{r components_2e}
+my_first_ggplot <- ggplot(data=county_factsANDprimaries,
+                          mapping=aes(x=PST045214, y=fraction_votes))
+
+my_first_ggplot[['mapping']]
+my_first_ggplot
+```
+
+### `geom` rendering 
+
+```{r components_3}
+
+my_first_ggplot + geom_point(mapping=aes(x=PST045214, y=fraction_votes)) -> 
+  my_first_rendered_ggplot
+
+my_first_rendered_ggplot
+```
+
+### adjusting scales
+
+- show data on appropriate scales
+
+```{r axes}
+# https://r4ds.had.co.nz/graphics-for-communication.html#scales
+# https://r4ds.had.co.nz/graphics-for-communication.html#replacing-a-scale
+my_first_rendered_ggplot + scale_x_log10()
+```
+
+
+### rendering style type
+
+- rule of proportional ink
+- plotting etiquette: color vision deficiency
+
+```{r density}
+# https://stackoverflow.com/questions/7714677/scatterplot-with-too-many-points
+my_first_ggplot + geom_point() + scale_x_log10()
+my_first_ggplot + geom_point(alpha=0.1) + scale_x_log10()
+my_first_ggplot + geom_point(alpha=0.1, size=2.5, stroke=0) + scale_x_log10()
+my_first_ggplot + geom_hex() + scale_x_log10()
+my_first_ggplot + scale_x_log10() + geom_density_2d()
+my_first_ggplot + geom_hex() + geom_density_2d() + scale_x_log10()
+# https://ggplot2.tidyverse.org/reference/scale_viridis.html
+my_first_ggplot + geom_hex() + geom_density_2d() + scale_x_log10() +
+  scale_fill_viridis_c()
+my_first_ggplot + scale_fill_viridis_c() + scale_x_log10() +
+  stat_density_2d(aes(fill=stat(density)), geom='raster', contour=FALSE) +
+  coord_cartesian(expand=FALSE) + 
+  geom_point(color='white', shape='.', size=0.0001, alpha=0.1)
+```
+
+
+### more `aes` options
+- size
+- color
+- alpha
+
+```{r aes}
+
+my_second_ggplot <- ggplot(data=county_factsANDprimaries,
+                           mapping=aes(size=POP060210, alpha=POP060210,
+                                       color=party, 
+                                       x=PST045214, y=fraction_votes))
+
+my_second_ggplot + geom_point() + scale_x_log10()
+
+```
+
+## labels
+
+- you will need to do something like this for your homework
+
+```{r labels}
+
+county_factsANDprimaries <- county_factsANDprimaries %>% 
+  dplyr::rename(`County Population`=PST045214, 
+                `County Density (per square mile)`=POP060210,
+                Party=party, `Fraction of Votes`=fraction_votes) 
+
+
+my_second_ggplot <- ggplot(data=county_factsANDprimaries,
+                           mapping=aes(size=`County Density (per square mile)`, 
+                                       alpha=`County Density (per square mile)`,
+                                       color=Party, 
+                                       x=`County Population`, 
+                                       y=`Fraction of Votes`))
+
+my_second_ggplot + geom_point() + scale_x_log10()
+```
+
+## facets
+
+- this is exactly like what you will need to do for your homework
+- but critique what I've done here
+  - what do you like about it?
+  - what don't you like about it?
+
+```{r facets}
+
+county_factsANDprimaries <- county_factsANDprimaries %>% 
+  dplyr::mutate(Candidate = stringr::str_replace(candidate, ' ','\n'))
+
+  
+my_third_ggplot <- ggplot(data=county_factsANDprimaries,
+                          mapping=aes(size=`County Population`, 
+                                      alpha=`County Population`,
+                                      color=Party, 
+                                      x=`County Density (per square mile)`, 
+                                      y=`Fraction of Votes`))
+
+my_third_ggplot + geom_point() + scale_x_log10() +
+  facet_wrap(~ Candidate, nrow = 2)
+```
+
+### touchups
+
+```{r touchup}
+# https://community.rstudio.com/t/x-axis-labels-overlap-want-to-rotate-labels-45/63800
+# http://www.sthda.com/english/wiki/ggplot2-axis-ticks-a-guide-to-customize-tick-marks-and-labels
+my_third_ggplot + geom_point() + scale_x_log10() +
+  facet_wrap(~ Candidate, nrow=4, scales='fixed') + 
+  scale_color_hue(direction=-1) +
+  scale_y_continuous(breaks=c(0,0.2,0.4,0.6,0.8, 1.0),
+                     guide=guide_axis(n.dodge=2, check.overlap=TRUE)) +
+  coord_flip()
+```
+
+
