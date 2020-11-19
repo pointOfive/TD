@@ -36,6 +36,10 @@ h3 {
 - Project Part 2 deadline?
 - ROC v Precision/Recall bonus
 - Data Usage: D,H
+  - D_train, D_test
+  - (D*)_Kfolds --> (D_0)_Kfolds
+  - M_k(D) -> H
+  
 - Lecture Motivation
 
 
@@ -88,13 +92,15 @@ data_space_plot + ggtitle('"Data Space"')
 ```
 
 ```{r model, include=FALSE}
+
 X <- tibble(intercept=1,x=x)
 X
 
 Beta <- tibble( estimate = c(0,0) )
 Beta 
 
-tibble( yhat = as.matrix(X) %*% as.matrix(Beta) )
+tibble( yhat = as.numeric(as.matrix(X) %*% as.matrix(Beta)) )
+
 ```
 
 ## Gradient Descent 
@@ -119,7 +125,7 @@ $$\LARGE
 
 ## Gradient Descent in "Parameter" Space
 
-- initiallize gradient descent algorithm
+- initialize gradient descent algorithm
 
 ```{r model_gradient_decent_setup}
 
@@ -166,7 +172,7 @@ Betas_pars %>% add_column(Beta) %>%
 
 # https://tibble.tidyverse.org/reference/add_row.html
 Betas_pars %>% add_row() -> tmp
-tmp[3,] < -loss_pars
+tmp[3,] <- loss_pars
 tmp %>% knitr::kable(digits=2) %>%
   kableExtra::kable_styling(full_width=FALSE)
 ```
@@ -303,11 +309,13 @@ $$\LARGE
 
 ## Gradient Descent in "Prediction" Space
 
-- initiallize gradient descent algorithm
+- initialize gradient descent algorithm
 
 ```{r prediction_gradient_decent_setup}
 alpha_learning_rate <- 0.5
 step = 1
+
+Beta <- 0*Beta-1
 Betas = Beta %>% rename_at(step, 
                            function(x) paste0(x, as.character(step), sep=''))
 loss_pars <- c(sum((as.matrix(X)%*%as.matrix(Beta)-as.matrix(y))^2))
@@ -351,7 +359,7 @@ loss_pars <- append(loss_pars,
                     sum((as.matrix(X)%*%as.matrix(Beta)-as.matrix(y))^2))
 
 Betas %>% add_row() -> tmp
-tmp[3,]<-loss_pars
+tmp[3,] <- loss_pars
 tmp %>% knitr::kable(digits=2) %>%
   kableExtra::kable_styling(full_width=FALSE)
 
@@ -470,7 +478,7 @@ data_space_plot + geom_line(data=tibble(x=support, y=fhat_model[[step]],
 
 ```{r more, include=FALSE}
 # https://www.datamentor.io/r-programming/for-loop/
-for (i in 1:200){
+for (i in 1:100){
   y_leftover <- y_leftover-fhat_datas
   
   stump <- rpart(y~x, data=tibble(x=x, y=y_leftover), 
@@ -501,8 +509,10 @@ animation <- fhat_model %>%
   add_column(tibble(x=support)) %>% 
   pivot_longer(cols=starts_with(".x"))
 
-# https://www.rdocumentation.org/packages/stringr/versions/1.4.0/topics/str_replace
+```
 
+```{r end2}
+# https://www.rdocumentation.org/packages/stringr/versions/1.4.0/topics/str_replace
 animation %>% mutate(name=as.integer(str_replace(name,'.x...',''))) %>%
   ggplot(aes(x=x, y=value)) + geom_line() +
   transition_time(name) + labs(title = "Step: {frame_time}") +
