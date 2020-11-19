@@ -59,7 +59,7 @@ My "live session" lectures for this class alternatingly combine (a) interactive 
 
 ## Data Mining Example Lecture: Gradient Boosting
 
-*The code presentation used for this lecture can be viewed [here](https://pointofive.github.io/Mod_12_Live.html).  You can also [Download](Mod_12_Live.html) and open the html file directly on your local computer; or, if you are a savvy RStudio user, you can download and run the [code](Mod_12_Live.Rmd) directly.*
+*The code presentation used for this lecture can be viewed [here](https://pointofive.github.io/Mod_12_Live.html). You can also [Download](Mod_12_Live.html) and open the html file directly on your local computer; or, if you are a savvy RStudio user, you can download and run the [code](Mod_12_Live.Rmd) directly.*
 
 As a representative example of the teaching style and approach I use for this class I below provid a cople highlights of the content of my lecture on gradient descent, as well as the poll questions I use to spark and guide interactive conversation with the class. <!--- You can [view a recording the live session lecture here](path)! -->
 
@@ -228,11 +228,7 @@ of the studies presented. I include this lecture as an example of "lecture slide
 
 ## Communicating with Data Example Lecture: ggplot2
 
-*The code presentation used for this lecture can be viewed 
-[here](https://pointofive.github.io/ggplot2.html).  
-You can also [Download](ggplot2.html) and open the html file directly on your 
-local computer; or, if you are a savvy RStudio user, you can download and 
-run the [code](ggplot2.Rmd) directly.*
+*The code presentation used for this lecture can be viewed [here](https://pointofive.github.io/ggplot2.html). You can also [Download](ggplot2.html) and open the html file directly on your local computer; or, if you are a savvy RStudio user, you can download and run the [code](ggplot2.Rmd) directly.*
 
 As a representative example of the teaching and lecture style I use for 
 "code tutorial" and "lab days" days I have included my initial 
