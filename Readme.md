@@ -1,5 +1,5 @@
 
-# Scott L. Schwartz, Ph.D. 
+# Scott Lee Schwartz, Ph.D. 
 ## Example Lectures
 
 - [Data Mining](#data-mining)
@@ -63,24 +63,22 @@ My "live session" lectures for this class alternatingly combine (a) interactive 
 
 As a representative example of the teaching style and approach I use for this class I below provid a cople highlights of the content of my lecture on gradient descent, as well as the poll questions I use to spark and guide interactive conversation with the class. <!--- You can [view a recording the live session lecture here](path)! -->
 
-![plotly](images/imageedit_1_8302619965.gif)
 
+|||
+|-|-|
+|![plotly](images/imageedit_1_8302619965.gif)|![plotly](images/plotly.png)|
 
 As indicated throughout the content, the lecture alternates between (a) the visualization presentations demonstrating different aspects of the methodolgy and (b) promps given to the class to help keep students engaged as well as more clear on the important take-away points of the presentations.  The prompts used for this class are below.  
 
-![plotly](images/plotly.png)
 
-![](images/q1.png)
-![](images/q2.png)
-![](images/q3.png)
-![](images/q4.png)
-![](images/q5.png)
-![](images/q6.png)
-![](images/q7.png)
-![](images/q8.png)
-![](images/pExtra.png)
-![](images/q9.png)
-![](images/q10.png)
+|||
+|-|-|
+|![](images/q1.png)|![](images/q2.png)|
+|![](images/q3.png)|![](images/q4.png)|
+|![](images/q5.png)|![](images/q6.png)|
+|![](images/q7.png)|![](images/q8.png)|
+|![](images/pExtra.png)|![](images/q9.png)|
+|![](images/q10.png)||
 
 # Communicating with Data
 
@@ -163,66 +161,51 @@ of the studies presented. I include this lecture as an example of "lecture slide
 
 
 - Here are emphasize the "learning barrier" and describe the "new faculty orientation" presentation I will be reporting on
-
-![](learning_lecture/s1.png)
-
 - I highlight these important factors in learning, emphasizing the 3 and 4 in particular as the remainder of the presentation will focus on the first two.
 
-![](learning_lecture/s2.png)
+|||
+|-|-|
+|![](learning_lecture/s1.png)|![](learning_lecture/s2.png)|
 
 - I prompt students to discuss their discomfort with my "hiding" of this figure
-
-![](learning_lecture/s3.png)
-
 - I describe the features of this figure, it's ostnsible implications, and then engage the class with the subsequent three poll questions 
 
-![](learning_lecture/s4.png)
-![](learning_lecture/s4_q1.png)
-![](learning_lecture/s4_q2.png)
-![](learning_lecture/s4_q3.png)
+|||
+|-|-|
+|![](learning_lecture/s3.png)||
+|![](learning_lecture/s4.png)|![](learning_lecture/s4_q1.png)|
+|![](learning_lecture/s4_q2.png)|![](learning_lecture/s4_q3.png)||
 
 - I present spaced repetition as it was presented to me, i.e., the work of Ebbinghus
-
-![](learning_lecture/s5.png)
-
 - I present the "forgetting curve" and compare this plot to the plot of the previous slide
-
-![](learning_lecture/s6.png)
-
 - I describe the implications of this figure for the role of spaced representation and learning
-
-![](learning_lecture/s7.png)
-
 - I emphasize the implications of this figure for the role of spaced representation and learning
 
-![](learning_lecture/s8.png)
+
+|||
+|-|-|
+|![](learning_lecture/s5.png)|![](learning_lecture/s6.png)|
+|![](learning_lecture/s7.png)|![](learning_lecture/s8.png)|
+
 
 - I describe the "mechanism" plot and then engage the class with the subsequent three polling questions; in fact, none of this is "data", "spaced repetition" is not something Ebbinghaus explored, and we should not necessarily find this compelling at this stage)
 
-![](learning_lecture/s9.png)
-
-![](learning_lecture/s9_q4.png)
-![](learning_lecture/s9_q5.png)
-![](learning_lecture/s9_q6.png)
+|||
+|-|-|
+|![](learning_lecture/s9.png)|![](learning_lecture/s9_q4.png)|
+|![](learning_lecture/s9_q5.png)|![](learning_lecture/s9_q6.png)|
 
 - I note that the Ebbinbhaus' study does not consider spaced repetition
-
-![](learning_lecture/s10.png)
-
 - I provide some "evidence" (**as all the previous plots thusfar have simiply been illustrative**) for spaced repetition and then engage the class with the subsequent polling question; in fact, this "data" is not readily found in the referenced paper, and we have no idea about uncertainty in this data)
-
-![](learning_lecture/s11.png)
-![](learning_lecture/s11_q7.png)
-
 - I discuss additional environmental and contextual factors influencing learning and knowledge acquisition
-
-![](learning_lecture/s12.png)
-
 - I show some interesting evidence for one of these factors, and then engage the class with the actual evidence as provided in the cited paper, and the subsequent class poll
 
-![](learning_lecture/s13.png)
-![](learning_lecture/s14.png)
-![](learning_lecture/s11_q8.png)
+|||
+|-|-|
+|![](learning_lecture/s10.png)|![](learning_lecture/s11.png)|
+|![](learning_lecture/s11_q7.png)||
+|![](learning_lecture/s12.png)|![](learning_lecture/s13.png)|
+|![](learning_lecture/s14.png)|![](learning_lecture/s11_q8.png)|
 
 
 
@@ -241,13 +224,11 @@ data plotting and figure creation are much more guided and directed,
 with the code necessary to complete the assignment provided and demonstrated 
 during the course of the lecture.  
 
-
-![](ggplot_lecture/p1.png)
-![](ggplot_lecture/p2.png)
-![](ggplot_lecture/p3.png)
-![](ggplot_lecture/left.png)
-![](ggplot_lecture/right.png)
-![](ggplot_lecture/p4.png)
+|||
+|--------------------------|----------------------------|
+|![](ggplot_lecture/p1.png)|![](ggplot_lecture/p3.png)  |
+|![](ggplot_lecture/p2.png)|![](ggplot_lecture/left.png)|
+|![](ggplot_lecture/right.png)|![](ggplot_lecture/p4.png)|
 
 
 
@@ -322,6 +303,67 @@ to the content of each lecture topic.
 
 
 ## Deep Learning Example Lecture: CNNs
+
+*The code presentation used for this lecture can be viewed [here](https://pointofive.github.io/CNN.html). If you're comfortable with Python and Jupyter Notebooks you can also [Download](CNN.ipynb), open, and run the notebook on your local computer. To use the interactive plotly graphics either use the first (`.html`) link, or this second approach: the plotly graphics do not remain rendered in static jupyter notebooks so you wll not be able to see them in the `.ipynb` file.*
+
+The topics for this course typically span one week (two classes) and so lectures 
+are naturally paired. The first lecture generally provides some
+conceptual introduction to the material along with guidance on 
+appropriate understanding and intuition for the topics at hand. 
+While the second lecture, on the other hand, teaches from an applied and 
+implementation oriented perspective, noting and highlighting the key 
+practical issues involved with leveraging the methodologies in
+question for actual, real-world use. 
+
+### Lecture 1
+
+In this lecture pair we first introduce the key concepts 
+involved in *Convolutional Neural Networks*; namely, 
+(a) nd-array data (e.g., images), 
+(b) kernels (e.g., edge-detectors), (c) convolutions, and (d) pooling.
+To do this we (interactively during the live class) use the following
+graphical images:
+
+|               |               |
+|:-------------:|:-------------:|
+| (a)           | (b)           |
+|![](CNN/p1.png)|![](CNN/p2.png)|
+| (c)           | (d)           |
+|![](CNN/p3.png)|![](CNN/p4.png)|
+| (d)           | (d)           |
+|![](CNN/p5.png)|![](CNN/p6.png)|
+
+We then emphasize some of the key considerations related to 
+*Convolutional Neural Networks* with the following 
+class polls: 
+
+|               |               |
+|:-------------:|:-------------:|
+|![](CNN/q1.png)|![](CNN/q2.png)|
+|![](CNN/q3.png)|![](CNN/q4.png)|
+|![](CNN/q5.png)|![](CNN/q6.png)|
+|![](CNN/q7.png)|![](CNN/q8.png)|
+
+### Lecture 2
+
+If you review the second half of the [notebook](https://pointofive.github.io/CNN.html) from the previous lecture,
+you will see that for this (next) lecture, which is the coding presentation, what we do for CNNs is
+to increase the [TensorFlow CNN tutorial](https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/images/cnn.ipynb) score from ~70% to ~90% using [this strategy](https://appliedmachinelearning.blog/2018/03/24/achieving-90-accuracy-in-object-recognition-task-on-cifar-10-dataset-with-keras-convolutional-neural-networks/);
+namely, enabling deep networks allows us fit better generalized models.
+Using this exercise as motivation, we are able to emphasize and drive home the key tools for 
+doing this:
+
+- Batch Normalization
+- Data Augmentation
+- Dropout 
+- Kernel Shrinkage
+
+While these topics have been previously encountered, this illustration allows us to 
+revisit them to review and re-introduce their relevance and importance. 
+In addition to this we review, we provide some additional notes
+for review of CNNs at the bottom of the notebook. 
+
+
 
 
 # Data Science Immersive
