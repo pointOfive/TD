@@ -1,5 +1,5 @@
 
-# Scott Lee Schwartz, Ph.D. 
+# Scott L. Schwartz, Ph.D. 
 ## Example Lectures
 
 - [Data Mining](#data-mining)
