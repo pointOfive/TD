@@ -82,6 +82,17 @@ As indicated throughout the content, the lecture alternates between (a) the visu
 
 # Communicating with Data
 
+*** [Final Course Syllabus](https://pointofive.github.io/DS3003_syllabus.html) AVAILABLE HERE *** 
+
+<details>
+<summary>
+Old Syllabus Notes
+</summary>
+
+<br>
+
+
+
 - Created from scratch during the Spring 2020 semester for the Fall 2021 semester launch of the UVA Undergraduate *Data Science Minor* within the School of Data Science 
 - Taught to UVA Undergraduates in an online format while COVID measures were still in place
 - Prerequesites for the course are extremely minimal
@@ -149,6 +160,7 @@ respectively
 | 13   | 26    | F: Students Present   | P: re-create via ggplot |
 | 14   | 27    | F: Students Present   | P: re-create via ggplot |
 
+</details>
 
 ## Communicating with Data Example Lecture: Learning
 
