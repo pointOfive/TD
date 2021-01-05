@@ -270,35 +270,40 @@ to the content of each lecture topic.
 
 ## Deep Learning Syllabus
 
-| Week | Class | Topic     | Reading                  | Videos | Assignment        | 
-|------|-------|-----------|--------------------------|--------|-------------------|
-| 1    | 1     | Syllabus  | LinAlg(D3); NumComp(D4)  | 80min  | NA                |
-| 1    | 2     | Python    | ML to Deep Learning(D5)  | 60min  | Python TUTORIAL; Quiz|
-| 2    | 3     | ML->DL    | Feed-Forward Networks(D6)| 75min  | NA                |
-| 2    | 4     | FFN/GMM   | FFN(D6); Keras TUTORIAL  |  5min  | Code1; Data; Quiz |
-| 3    | 5     | FFN Review| Regularization(D7)       | 55min  | PROJECT1 LitReview|
-| 3    | 6     | Reg Demo  | Regularization(D7)       |   NA   | DNN TUTORIAL; Quiz|
-| 4    | 7     | Reg Review| Optimization(D8)         | 50min  | NA                |
-| 4    | 8     | Optimize  | FFN/Reg/Opt (D6-8)       |   NA   | Optimize TUTORIAL |
-| 5    | 9     | Optim Demo| FFN/Reg/Opt (D6-8)       |   NA   | PROJECT2 Proposal |
-| 5    | 10    | Opt Review| FFN/Reg/Opt (D6-8)       |   NA   | Quiz              |
-| 6    | 11    | TF Data   | TensorFlow Data (H13)    | 55min  | CodeA; TF TUTORIAL|
-| 6    | 12    | TFDS      | Convolutional NNs(D9)    | 30min  | Quiz              |
-| 7    | 13    | CNN       | Convolutional NNs(D9)    | 45min  | CNN TUTORIAL      |
-| 7    | 14    | CNN Review| RNN (D10)                |   NA   | Code2; Quiz       |
-| 8    | 15    | RNN idea  | LSTM (D10); RNN TUTORIAL | 20min  | PROJECT3 Design   |
-| 8    | 16    | LSTM idea |                          |   NA   | Code3             |
-| 9    | 17    | Embeddings|                          |        | PROJECT4 Breakdown|
-| 9    | 18    | Transformers|                        | 35min  | Quiz              |
-| 10   | 19    | Seqential Review| AutoEncoders(H17)  | 30min  | NA                |
-| 10   | 20    | VAEs      | GANs(H17); GAN TUTORIAL  | 26min  | PROJECT5 Tuning   |
-| 11   | 21    | GANs      |                          |   NA   | CodeB             |
-| 11   | 22    | GM Review | RL(H18);                 | 120min | Quiz              |
-| 12   | 23    | RL Review |                          |        | RL TUTORIAL       |
-| 12   | 24    | Deploying |                          |        | Code4; Quiz       |
-| 13   | 25    | ||||
-| 13   | 26    | ||||
-| 14   | 27    | ||||
+| Date | Class | Topic     | Assigned Reading         | Videos | Other Activities                        |    |   |   |   |    |   |
+|------|-------|-----------|--------------------------|--------|-----------------------------------------|----|---|---|---|----|---|
+| 2/1  | 1.1   | Syllabus  | LinAlg(D2); NumComp(D4)  | 80min  | Baseline Q, Syllabus Q, TUTORIAL-Python | 1q |1d |   |   |    |   |
+| 2/3  | 1.2   | Python    | ML to Deep Learning(D5)  | 60min  |                                         | ^  |   |   |   |    |   |
+| 2/8  | 2.3   | ML->DL    | Feed-Forward Networks(D6)| 75min  | DLT5 Q, Video Q, TUTORIAL-Keras, CODE-1 | ^  |2d |1q |10c|    |   |
+| 2/10 | 2.4   | FFN/GMM   | Feed-Forward Networks(D6)|  5min  | Data Resources and PROJECT-1 Lit Review |    |5p |^  |^  |    |   |
+| 2/15 | 3.5   | FFN Review| Regularization(D7)       | 55min  | DLT6 Q, Video Q                         | 2d |^  |^  |^  |1q  |   |
+| 2/17 |       | BREAK DAY | Regularization(D7)       |        |                                         |    |^  |   |   |^   |   |
+| 2/22 | 4.6   | Reg Review|                          |   NA   | DLT7 Q, PROJECT-2 Proposal              | 2d |^  |2p |   |^   |   |
+| 2/24 | 4.7   | Reg Demo  | Optimization(D8)         | 50min  | Video Q                                 |    |   |^  |   |    |   |
+| 3/1  | 5.8   | Optim Demo| Optimization(D8)         |   NA   | Video Q, TUTORIAL-DNN                   | 1q |   |^  |   |    |   |
+| 3/3  | 5.9   | Opt Review| FFN/Reg/Opt (D6-8)       |   NA   | DLT8 Q                                  | ^  |   |^  |2d |    |   |
+| 3/8  | 6.10  | TF Data   | TensorFlow Data (H13)    |   NA   | TUTORIAL-TFD                            | ^  |   |   |   |    |   |
+| 3/10 | 6.11  | _pitches_ | TensorFlow Data (H13)    | 55min  | Video Q, CODEATHON-A +1 top5 & +1 top3  |    |1q |8c |   |    |   |
+| 3/15 | 7.12  | _groups_  |                          |   NA   | PROJECT-3 Group Proposal and Lit Rev    | 2g |^  |^  |   |    |   |
+| 3/17 | 7.13  | CNN       |                          | 55min  | Video Q, TUTORIAL-CNN                   | ^  |^  |^  |1q |    |   |
+| 3/22 | 8.14  | CNN BETTER| CNNs(D9)                 | 15min  | CODE-2, PROJECT-4 Model Design & Build  | ^  |5g |^  |^  |10c |   |
+| 3/24 | 8.15  | RNN/LSTM  | CNNs(D9); RNN/LSTM (D10) | 20min  | TUTORIAL-RNN, CODE-3(OPTIONAL)          | ^  |^  |   |^  |^   |   |
+| 3/29 |       | BREAK DAY |                          |        |                                         |    |^  |   |   |^   |   |
+| 3/31 | 9.16  | Embeddings|                          |   NA   | PROJECT-5 Checkpoint and Contributions  |    |^  |2g |1d |^   |   |
+| 4/5  | 10.17 |Transformer| Attention Paper          | 35min  |                                         |    |^  |^  |   |^   |   |
+| 4/7  | 10.18 | BERT      | BERT Transformer Paper   |        | Video Q, PROJECT-6 Tuning               | 1q |   |^  |4g |    |   |
+| 4/12 | 11.19 | VAEs      | AutoEncoders/GANs(H17)   | 55min  | Video Q, TUTORIAL-GAN, CODEATHON-B      | ^  |8c |^  |^  |1q  |   |
+| 4/14 | 11.20 | GANs      |                          |   NA   |                                         |    |^  |   |^  |^   |   |
+| 4/19 | 12.21 | Deploying | RL(H19)                  |   NA   | PROJECT-7/8 Deploying/Submission        | 2g |^  |2g |^  |^   |   |
+| 4/21 | 12.22 | Deploying |                          |  50min | Video Quiz                              | ^  |^  |^  |8c |1q  |   |
+| 4/26 | 13.23 | Review    |                          |        |                                         | ^  |   |^  |^  |^   |   |
+| 4/28 | 13.24 | RL 1      | RL(H18)                  |  80min | TUTORIAL-RL, Video Q, CODE-4, PROJECT-9 | ^  |2g |^  |^  |10c |1q |
+| 5/3  | 14.25 | RL 2      | RL(H18)                  |        |                                         |    |^  |^  |^  | ^  |^  |
+| 5/5  | 14.26 | LastClass |                          |        |                                         |    |^  |^  |   | ^  |   |
+| 5/13 | Final | Project   | Presentations            |        |                                         |    |^  |^  |   | ^  |   |
+
+
+
 
 
 
