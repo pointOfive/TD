@@ -95,6 +95,15 @@ As indicated throughout the content, the lecture alternates between (a) the visu
 
 **Final Course Syllabus [AVAILABLE HERE](https://pointofive.github.io/DS3003_syllabus.html)**
 
+![](images/3003syl1.png)
+![](images/3003syl2.png)
+![](images/3003syl3.png)
+![](images/3003syl4.png)
+![](images/3003syl5.png)
+![](images/3003syl6.png)
+![](images/3003syl7.png)
+![](images/3003syl8.png)
+
 <details>
 <summary>
 Old Syllabus Notes
