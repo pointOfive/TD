@@ -82,16 +82,6 @@ As indicated throughout the content, the lecture alternates between (a) the visu
 
 # Communicating with Data
 
-*** [Final Course Syllabus](https://pointofive.github.io/DS3003_syllabus.html) AVAILABLE HERE *** 
-
-<details>
-<summary>
-Old Syllabus Notes
-</summary>
-
-<br>
-
-
 
 - Created from scratch during the Spring 2020 semester for the Fall 2021 semester launch of the UVA Undergraduate *Data Science Minor* within the School of Data Science 
 - Taught to UVA Undergraduates in an online format while COVID measures were still in place
@@ -102,6 +92,18 @@ Old Syllabus Notes
 - The course is an "R" course that uses ggplot2, plotly, and shiny
 
 ## Communicating with Data Syllabus
+
+**Final Course Syllabus [AVAILABLE HERE](https://pointofive.github.io/DS3003_syllabus.html)**
+
+<details>
+<summary>
+Old Syllabus Notes
+</summary>
+
+<br>
+
+
+## Communicating with Data Syllabus (Orginal Notes)
 
 This is a "tri-brid" course that uses the trifect of  
 
