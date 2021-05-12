@@ -1,0 +1,31 @@
+digraph {
+	subgraph cluster100 {
+		beta_gene [label="beta_gene
+~
+Normal"]
+		beta_gene_RENAL [label="beta_gene_RENAL
+~
+Deterministic" shape=box]
+		beta_gene_RENAL_stn [label="beta_gene_RENAL_stn
+~
+Normal"]
+		sd_gene [label="sd_gene
+~
+HalfNormal"]
+		lambdas [label="lambdas
+~
+HalfCauchy"]
+		label=100 labeljust=r labelloc=b style=rounded
+	}
+	subgraph "cluster1,700" {
+		gene_expression [label="gene_expression
+~
+Normal" style=filled]
+		label="1,700" labeljust=r labelloc=b style=rounded
+	}
+	beta_gene_RENAL_stn -> beta_gene_RENAL
+	lambdas -> beta_gene_RENAL
+	beta_gene -> gene_expression
+	sd_gene -> gene_expression
+	beta_gene_RENAL -> gene_expression
+}
