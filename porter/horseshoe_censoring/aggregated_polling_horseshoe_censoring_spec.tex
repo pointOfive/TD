@@ -1,0 +1,43 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{amsmath}
+%SetFonts
+
+%SetFonts
+
+
+\title{Aggregated Regression: 
+Horseshoeing Interval Censored Data}
+\author{Porter/Schwartz}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+I have an interesting side project to estimate trend changes in political polling data. The polls are interval censored, we only get aggregate counts over a 3-6 day window, but trends can change quicker, like after a debate. I’m using frequentist penalization with EM, but Bayesian would be nicer as this is getting \
+a bit too complicated for frequentist and Bayesian would make a better applied paper. -- Mike
+
+\section{Single Interval}
+
+The behavior of the \emph{horseshoe prior} 
+\begin{align*}
+\beta_i &\sim N(0, \tau \lambda_j)\\
+\lambda_i &\sim C_+(0, 1)\\
+\tau &\sim C_+(0, \tau_0)\\
+\end{align*}
+on groups $j = 1, \cdots q $ with $N_j=1000$ trials
+and $n_j \sim Bin\left(N_j, p=logit^{-1}(\theta_j + \sum_{i=1}^k X_{ij} \beta_i )\right)$
+with $\beta_i = i/k$ for $i = 1, \cdots k$, $\theta_j = -25$, 
+and  $X_{ij} \sim Bern(0.5)$ is as follows.
+
+%\subsection{Synthetic Data}
+
+
+
+\end{document}  
